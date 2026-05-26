@@ -728,6 +728,20 @@ select.form-input {
     z-index: 100;
 }
 
+/* --- Espacement entre le Logo et la Navbar (Desktop uniquement) --- */
+@media (min-width: 992px) {
+    /* Ajustez cette valeur (ex: 30px, 80px...) selon l'espace désiré */
+    .site-branding {
+        margin-right: 30px !important; 
+    }
+    
+    /* Option alternative si vous préférez pousser le menu plutôt que le logo :
+    .header-menu {
+        margin-left: 50px !important;
+    }
+    */
+}
+
 .header-box {
     width: 100%;
     display: flex;
@@ -742,7 +756,7 @@ select.form-input {
 
 .site-branding a {
     display: inline-block;
-    width: 104px;
+    width: 90px;
 }
 
 .site-branding a img {
@@ -777,7 +791,7 @@ select.form-input {
     line-height: 24px;
     display: inline-block;
     position: relative;
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 .main-navigation ul li:first-child {
@@ -7250,4 +7264,59 @@ button.btn-submit:hover {
 /* Ajustement de l'icône FontAwesome pour un centrage parfait */
 .footer-social-links a i {
     line-height: 1;
+}
+
+
+/* ======================================================
+   BOUTON WHATSAPP FLOTTANT
+   ====================================================== */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 80px;
+    right: 10px; /* Changez en left: 40px; si vous le voulez à gauche */
+    background-color: #25d366; /* Vert officiel WhatsApp */
+    color: #FFF !important;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 32px;
+    box-shadow: 0px 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-float:hover {
+    background-color: #1ebe57; /* Vert légèrement plus foncé au survol */
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 20px rgba(37, 211, 102, 0.6);
+    color: #FFF !important;
+}
+
+/* Ajustement parfait de l'icône FontAwesome */
+.whatsapp-float i {
+    line-height: 1;
+    margin-top: -2px;
+}
+
+/* Animation de pulsation (Pulse Effect) */
+@keyframes pulse-whatsapp {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* Ajustement pour les petits écrans (Mobile) */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 70px;
+        right: 10px;
+        font-size: 26px;
+    }
 }
